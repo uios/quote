@@ -476,6 +476,11 @@
         margin-right: 20px;
     }
 
+    .margin-x-20px {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
     @media (max-width: 768px) {
         .-tablet-margin-left-10px {
             margin-left: 10px;
@@ -493,6 +498,21 @@
 
         .-mobile-margin-20px {
             margin: 20px;
+        }
+    }
+}
+
+/*MAX WIDTH*/
+@media screen {
+    @media (max-width: 1280px) {
+        .-sxga-max-width-100pct-minus-90px {
+            max-width: calc(100% - 90px);
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .-mobile-max-width-100pct {
+            max-width: 100%;
         }
     }
 }
