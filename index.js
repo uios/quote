@@ -17,20 +17,9 @@ window.cdn = {
 
 window.onload = ()=>{
     window.dom = {
-        audio: document.getElementById('audio'),
         body: document.body,
-        boot: document.getElementById("boot"),
-        player: document.getElementById('player')
+        boot: document.getElementById("boot")
     };
-
-    var domains = window.location.host.split('.');
-    window.global = {
-        domains: {
-            domain: domains.length > 1 ? domains[domains.length - 2] : null,
-            subdomain: domains.length > 2 ? domains[domains.length - 3] : null,
-            tld: domains[domains.length - 1]
-        }
-    }
 
     dom.body.dataset.load = "ing";
 
@@ -87,7 +76,7 @@ function init() {
     };
 
     var url = window.location.pathname;
-    if (window.global.domains.subdomain === "uios") {
+    if (window.globals.domains.subdomain === "uios") {
         var dir = rout.ed.dir(window.location.pathname);
         dir.splice(0, 1)
         var url = rout.ed.url(dir);
