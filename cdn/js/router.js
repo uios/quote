@@ -1,21 +1,16 @@
 String.prototype.router = async function(params) {
     var uri = this.toString();
+    
+    var url = new URL(uri,location.origin); console.log(url);
+    var route = window.route = rout.e(url.hash ? url.hash.split('#')[1] : url.pathname + url.search + url.hash); console.log(route);
 
-    var url = new URL(uri,location.origin);
-    var tabs = await rout.ed.vars(rout.ed.dir(url.hash ? url.hash.split('#')[1] : uri));
-    var goto = rout.ed.url(tabs);
-    var route = window.paths = window.route = rout.e(url.hash ? url.hash.split('#')[1] : goto + url.search + url.hash);
-    console.log(url,route,getRoot());
-
-    var pages = dom.body.find('pages[data-root="' + getRoot() + '"]');
+    var pages = dom.body.find('pages[data-pages="' + route.root + '"]');
     var page = dom.body.find('page[data-page="' + route.page + '"]');
-    var vp = page ? page : pages; console.log({vp},'pages[data-pages="' + getRoot() + '"]');
+    var vp = page ? page : pages;
 
     if (vp) {
-        var goto = window.global.domains.subdomain === "uios" ? '/photo' : '';
-        if (vp.innerHTML === "" && vp.dataset.fetch) {
-            vp.innerHTML = await ajax(vp.dataset.fetch);
-        }
+        var goto = window.global.domains.subdomain === "uios" ? '/write' : '';
+        vp.innerHTML === "" && vp.dataset.fetch ? vp.innerHTML = await ajax(vp.dataset.fetch) : null;
     }
 
     var go = async function(resolve, reject) {
@@ -27,19 +22,15 @@ String.prototype.router = async function(params) {
 
             route = window.view ? await view(route).then(rout.ed.bang(route)) : await rout.ed.bang(route);
 
-            lazyLoad(dom.body.all('[data-src]'), vp);
-
             if (!pop && !["blob:"].includes(window.location.protocol)) {
                 const hash = global.domains.domain === "github" ? "/#" : "";
-                var goto = window.global.domains.subdomain === "uios" ? '/photo' : '';
-                const link = hash.length > 0 ? 
-                    goto + route.search + '#' + (route.hash.length > 0 ? route.hash.split('#')[1] : route.path) : 
-                    goto + route.path + route.search + route.hash;
+                var goto = window.global.domains.subdomain === "uios" ? '/write' : '';
+                const link = hash.length > 0 ? goto + hash + (route.hash.length > 0 ? route.hash.split('#')[1] : route.path) + route.search : goto + route.path + route.search + route.hash;
                 console.log({
                     hash,
                     route,
                     link
-                });
+                }, route.hash.split('#')[1]);
                 history.pushState(link, '', link);
             }
 
@@ -90,9 +81,9 @@ window.rout.e = state=>{
 
 window.rout.ed = {};
 window.rout.ed.bang = async(route)=>{
-    var pages = dom.body.find('pages[data-pages="' + getRoot()+ '"]');
+    var pages = dom.body.find('pages[data-pages="' + route.root + '"]');
     var page = dom.body.find('page[data-page="' + route.page + '"]');
-    var vp = page ? page : pages; console.log({vp,route},getRoot());
+    var vp = page ? page : pages;
 
     $('[data-hide]').attr("data-active", true);
     $(':not(page)[data-pages]').removeAttr("data-active");
@@ -121,12 +112,6 @@ window.rout.ed.bang = async(route)=>{
     }
     return route;
 }
-window.rout.ed.close = ()=>{
-    var active = document.body.find('main page.active');
-    const goto = (active ? active.dataset.path : '/');
-    //alert(goto);
-    goto.router();
-}
 window.rout.ed.dir = function(url, num, g=[]) {
     if (url) {
         var split = url.split("/");
@@ -148,64 +133,6 @@ window.rout.ed.url = function(dir) {
         href = "/";
     }
     return href;
-}
-window.rout.ed.vars = async function(tabs) {
-    var d = 0
-      , e = 0;
-    do {
-        var dir = tabs[d];
-        if (dir && dir.length > 0) {
-            if (dir.charAt(0) === "*") {
-                dir = GOT[d];
-            }
-            if (dir.charAt(0) === ":") {
-                dir = dir.substring(1);
-                if (!isNaN(dir)) {
-                    var drc = rout.ed.dir(dom.body.dataset.path);
-                    console.log({
-                        dir,
-                        is: d >= parseInt(dir),
-                        drcd: drc[d]
-                    });
-                    if (drc[e - 1] && d >= parseInt(dir)) {
-                        //alert('dir'+dir);
-                        e === 0 && d > 0 ? e = d + 1 : e;
-                        dir = drc[e];
-                        //d = d  1;
-                        e++;
-                    } else {
-                        dir = null;
-                        tabs.splice(d, 1);
-                        d = tabs.length;
-                        //alert(1);
-                    }
-                }
-                if (dir === "get") {
-                    var drc = rout.ed.dir(window.location.pathname);
-                    if (drc[d]) {
-                        dir = drc[d];
-                        //alert(drc[d]);
-                    } else {
-                        dir = null;
-                        tabs.splice(d, 1);
-                        d = tabs.length;
-                        //alert(1);
-                    }
-                }
-            }
-            if (dir) {
-                tabs[d] = dir.toString().split(":")[0];
-            } else {
-                tabs[d] = null;
-            }
-        }
-        d++;
-    } while (d < tabs.length);
-    tabs = tabs.filter(function(el) {
-        return el != null;
-    });
-    //console.log({tabs});
-    return tabs;
 }
 
 window.rout.ing = (href,GOT,n)=>{
