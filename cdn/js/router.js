@@ -9,7 +9,7 @@ String.prototype.router = async function(params) {
     var vp = page ? page : pages;
 
     if (vp) {
-        var goto = window.global.domains.subdomain === "uios" ? '/write' : '';
+        var goto = window.global.domains.subdomain === "uios" ? '/'+document.head.querySelector('[name="application-shortname"]').content : '';
         vp.innerHTML === "" && vp.dataset.fetch ? vp.innerHTML = await ajax(vp.dataset.fetch) : null;
     }
 
@@ -24,7 +24,7 @@ String.prototype.router = async function(params) {
 
             if (!pop && !["blob:"].includes(window.location.protocol)) {
                 const hash = global.domains.domain === "github" ? "/#" : "";
-                var goto = window.global.domains.subdomain === "uios" ? '/write' : '';
+                var goto = window.global.domains.subdomain === "uios" ? '/'+document.head.querySelector('[name="application-shortname"]').content : '';
                 const link = hash.length > 0 ? goto + hash + (route.hash.length > 0 ? route.hash.split('#')[1] : route.path) + route.search : goto + route.path + route.search + route.hash;
                 console.log({
                     hash,

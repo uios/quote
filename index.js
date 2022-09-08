@@ -12,7 +12,7 @@ auth.config = {
 };
 
 window.cdn = {
-    endpoint: "https://cdn.uios.computer/file/audio-uios"
+    endpoint: "https://cdn.uios.computer/file/write-uios"
 };
 
 window.onload = ()=>{
