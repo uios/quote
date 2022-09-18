@@ -356,6 +356,14 @@
         .-mobile-max-width-100pct {
             max-width: 100%;
         }
+        
+        .-mobile-max-width-600px {
+            max-width: 600px;
+        }
+        
+        .-mobile-max-width-100vw {
+            max-width: 100vw;
+        }
     }
 }
 
