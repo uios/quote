@@ -43,6 +43,10 @@
         background-color: #1d9bf0;
     }
 
+    .background-color-db {
+        background-color: #dbdbdb;
+    }
+
     .background-color-f7f9f9 {
         background-color: #f7f9f9;
     }
@@ -62,6 +66,10 @@
 
 /*BORDER*/
 @media screen {
+    .border-1px-solid {
+        border: 1px solid;
+    }
+    
     .border-bottom-1px-solid {
         border-bottom: 1px solid;
     }
@@ -173,6 +181,14 @@
     }
 
     @media (max-width: 480px) {
+        .-auth-mobile-display-none {
+            display: none;
+        }
+        
+        .-mobile-display-flex {
+            display: flex;
+        }
+        
         .-mobile-display-none {
             display: none;
         }
@@ -230,12 +246,24 @@
 
 /*HEIGHT*/
 @media screen {
+    .height-30px, [data-height="30px"] {
+        height: 30px;        
+    }
+    
     .height-40px, [data-height="40px"] {
         height: 40px;
     }
     
     .height-50px {
         height: 50px;
+    }
+
+    .height-75pct {
+        height: 75%;
+    }
+
+    .height-100pct {
+        height: 100%;
     }
 
     @media (max-width: 768px) {
@@ -284,8 +312,19 @@
     }
 }
 
+/*LEFT*/
+@media screen {
+    .left-0 {
+        left: 0;
+    }
+}
+
 /*LINE HEIGHT*/
 @media screen {
+    .line-height-30px {
+        line-height: 30px;    
+    }
+    
     .line-height-40px {
         line-height: 40px;    
     }
@@ -301,12 +340,20 @@
         margin: auto;
     }
 
+    .margin-10px {
+        margin: 10px;
+    }
+
     .margin-20px {
         margin: 20px;
     }
 
     .margin-left-20px {
         margin-left: 20px;
+    }
+
+    .margin-left-auto {
+        margin-left: auto;
     }
 
     .margin-right-20px {
@@ -388,6 +435,16 @@
         padding: 20px;
     }
 
+    .padding-x-10px {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .padding-x-20px {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
     @media (max-width: 768px) {
         .-tablet-padding-0 {
             padding: 0;
@@ -432,6 +489,20 @@
     }
 }
 
+/*OVERFLOW*/
+@media screen {
+    .text-overflow-ellipsis {
+        text-overflow: ellipsis;
+    }
+}
+
+/*RIGHT*/
+@media screen {
+    .right-0 {
+        right: 0;
+    }
+}
+
 /*TEXT ALIGN*/
 @media screen {
     .text-align-center {
@@ -439,12 +510,6 @@
     }
 }
 
-/*OVERFLOW*/
-@media screen {
-    .text-overflow-ellipsis {
-        text-overflow: ellipsis;
-    }
-}
 
 /*TOP*/
 @media screen {
@@ -455,12 +520,24 @@
 
 /*WIDTH*/
 @media screen {
+    .width-75pct {
+        width: 75%;
+    }
+    
     .width-100pct {
         width: 100%;
+    }
+    
+    .widtth-30px, [data-width="30px"] {
+        width: 30px;        
     }
 
     .width-40px, [data-width="40px"] {
         width: 40px;
+    }
+
+    .width-50px {
+        width: 50px;
     }
 
     .width-190px {

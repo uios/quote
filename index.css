@@ -169,6 +169,11 @@ boot > div{width:36px;height:36px;margin:10px;border-radius:100%;display:inline-
         height: 100%;
     }
 
+    box > section > picture {
+        display: flex;
+        position: relative;
+    }
+
     flex, column, row {
         display: flex;
         display: webkit-flex;
@@ -258,6 +263,10 @@ boot > div{width:36px;height:36px;margin:10px;border-radius:100%;display:inline-
     }
 
     body:not([data-uid]) .isauth, body[data-uid] .noauth {
+        display: none;
+    }
+
+    body:not([data-uid]) .-isauth, body[data-uid] .-noauth {
         display: none;
     }
 }

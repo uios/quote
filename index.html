@@ -43,7 +43,12 @@
             <div class="bouncing bounce2 bg-g"></div>
             <div class="bouncing bounce3 bg-b"></div>
         </boot>
-        <nav class="-mobile-border-color-eff3f4 -mobile-border-top-1px-solid -mobile-bottom-0 -mobile-height-50px -mobile-position-fixed -mobile-width-100pct z-index-5">
+        <headeer>
+            <section>
+                <card></card>
+            </section>
+        </headeer>
+        <nav class="-auth-mobile-display-none -mobile-border-color-eff3f4 -mobile-border-top-1px-solid -mobile-bottom-0 -mobile-height-50px -mobile-position-fixed -mobile-width-100pct z-index-5">
             <section class="-mobile-flex-direction-row display-flex flex-direction-column margin-x-20px">
                 <card class="-mobile-display-none">
                     <section>
@@ -54,7 +59,7 @@
                 </card>
                 <card class="width-100pct">
                     <section class="-mobile-flex-direction-row -mobile-justify-content-space-around  display-flex flex-direction-column width-100pct">
-                        <box data-href="/">
+                        <box class="-auth-mobile-display-none" data-href="/">
                             <row class="align-items-center">
                                 <ico>
                                     <n class="gg-home"></n>
@@ -62,7 +67,7 @@
                                 <text class="-sxga-display-none width-190px">Home</text>
                             </row>
                         </box>
-                        <box data-href="/explore/">
+                        <box class="-auth-mobile-display-none" data-href="/explore/">
                             <row class="align-items-center">
                                 <ico>
                                     <n class="-sxga-display-none gg-hashtag"></n>
@@ -130,6 +135,7 @@
                 </card>
             </section>
         </nav>
+        <aside class="-mobile-display-flex display-none position-fixed"></aside>
         <main class="-mobile-max-width-100pct -sxga-max-width-100pct-minus-90px">
             <page data-fetch="/cdn/html/page/page.index.html" data-page="/"></page>
             <page data-fetch="/cdn/html/page/page.explore.html" data-page="/explore/"></page>
