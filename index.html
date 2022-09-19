@@ -135,7 +135,152 @@
                 </card>
             </section>
         </nav>
-        <aside class="-mobile-display-flex display-none position-fixed"></aside>
+        <aside class="-mobile-display-flex display-none height-100pct left-0 position-fixed width-100pct z-index-7" data-transform="translateX(-100%)" id="main-menu">
+            <picture class="background-color-rgba-0-0-0-50pct height-100pct position-fixed width-100pct z-index-3" data-tap="controller.menu.close"></picture>
+            <column class="background-color-fff height-100pct z-index-5">
+                <card class="line-height-50px margin-x-20px width-240px">
+                    <row>
+                        <box class="width-100pct">
+                            <row>
+                                <text class="font-weight-bolder">Account info</text>
+                                <ico class="margin-left-auto" data-tap="controller.menu.close" data-width="30px">
+                                    <n class="gg-close"></n>
+                                </ico>
+                            </row>
+                        </box>
+                    </row>
+                </card>
+                <card class="line-height-50px overflow-x-hidden">
+                    <column>
+                        <box>
+                            <row class="margin-x-20px">
+                                <ico class="margin-right-10px" data-width="20px">
+                                    <n class="gg-user"></n>
+                                </ico>
+                                <text>Profile</text>
+                            </row>
+                        </box>
+                        <box>
+                            <row class="margin-x-20px">
+                                <ico class="margin-right-10px" data-width="20px">
+                                    <n class="gg-notes"></n>
+                                </ico>
+                                <text>Lists</text>
+                            </row>
+                        </box>
+                        <box>
+                            <row class="margin-x-20px">
+                                <ico class="margin-right-10px" data-width="20px">
+                                    <n class="gg-comment"></n>
+                                </ico>
+                                <text>Topics</text>
+                            </row>
+                        </box>
+                        <box>
+                            <row class="margin-x-20px">
+                                <ico class="margin-right-10px" data-width="20px">
+                                    <n class="gg-bookmark"></n>
+                                </ico>
+                                <text>Bookmarks</text>
+                            </row>
+                        </box>
+                        <box>
+                            <row class="margin-x-20px">
+                                <ico class="margin-right-10px" data-width="20px">
+                                    <n class="gg-bolt"></n>
+                                </ico>
+                                <text>Moments</text>
+                            </row>
+                        </box>
+                        <box>
+                            <row class="margin-x-20px">
+                                <ico class="margin-right-10px" data-width="20px">
+                                    <n class="gg-user"></n>
+                                </ico>
+                                <text>Premium</text>
+                            </row>
+                        </box>
+                        <box>
+                            <row class="margin-x-20px">
+                                <ico class="margin-right-10px" data-width="20px">
+                                    <n class="gg-shape-circle"></n>
+                                </ico>
+                                <text>Circles</text>
+                            </row>
+                        </box>
+                        <box>
+                            <row class="margin-x-20px">
+                                <ico class="margin-right-10px" data-width="20px">
+                                    <n class="gg-user"></n>
+                                </ico>
+                                <text>Newsletter</text>
+                            </row>
+                        </box>
+                        <box class="border-top-1px-solid">
+                            <row class="margin-x-20px">
+                                <ico class="margin-right-10px" data-width="20px">
+                                    <n class="gg-dollar"></n>
+                                </ico>
+                                <text>Business</text>
+                            </row>
+                        </box>
+                        <box>
+                            <row class="margin-x-20px">
+                                <ico class="margin-right-10px" data-width="20px">
+                                    <n class="gg-user"></n>
+                                </ico>
+                                <text>Ads</text>
+                            </row>
+                        </box>
+                        <box>
+                            <row class="margin-x-20px">
+                                <ico class="margin-right-10px" data-width="20px">
+                                    <n class="gg-chart"></n>
+                                </ico>
+                                <text>Analytics</text>
+                            </row>
+                        </box>
+                        <box class="border-top-1px-solid">
+                            <row class="margin-x-20px">
+                                <ico class="margin-right-10px" data-width="20px">
+                                    <n class="gg-options"></n>
+                                </ico>
+                                <text>Settings</text>
+                            </row>
+                        </box>
+                        <box>
+                            <row class="margin-x-20px">
+                                <ico class="margin-right-10px" data-width="20px">
+                                    <n class="gg-info"></n>
+                                </ico>
+                                <text>Help</text>
+                            </row>
+                        </box>
+                        <box class="border-top-1px-solid">
+                            <row class="margin-x-20px">
+                                <ico class="margin-right-10px" data-width="20px">
+                                    <n class="gg-user"></n>
+                                </ico>
+                                <text>Data Saver</text>
+                            </row>
+                        </box>
+                        <box>
+                            <row class="margin-x-20px">
+                                <ico class="margin-right-10px" data-width="20px">
+                                    <n class="gg-color-bucket"></n>
+                                </ico>
+                                <text>Display</text>
+                            </row>
+                        </box>
+                        <box class="border-top-1px-solid">
+                            <row class="margin-x-20px">
+                                <text>Log Out</text>
+                            </row>
+                        </box>
+                    </column>
+                </card>
+            </column>
+        </aside>
         <main class="-mobile-max-width-100pct -sxga-max-width-100pct-minus-90px">
             <page data-fetch="/cdn/html/page/page.index.html" data-page="/"></page>
             <page data-fetch="/cdn/html/page/page.explore.html" data-page="/explore/"></page>

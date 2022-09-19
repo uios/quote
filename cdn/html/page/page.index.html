@@ -1,4 +1,4 @@
-<blocks class="-mobile-max-width-100vw border-color-eff3f4 border-left-1px-solid border-right-1px-solid width-600px">
+<blocks class="-mobile-border-unset -mobile-max-width-100vw border-color-eff3f4 border-left-1px-solid border-right-1px-solid width-600px">
     <header>
         <section>
             <card class="line-height-50px">
@@ -18,7 +18,7 @@
                             <text class="font-weight-bolder padding-x-20px">Home</text>
                         </section>
                     </box>
-                    <box class="margin-left-auto">
+                    <box class="margin-left-auto" data-tap="controller.menu.open">
                         <section>
                             <ico>
                                 <n class="gg-options"></n>
@@ -29,19 +29,19 @@
             </card>
         </section>
     </header>
-    <block class="-mobile-bottom-0 -mobile-position-fixed -noauth">
+    <block class="-mobile-bottom-0 -mobile-position-fixed -noauth width-100pct background-color-fff border-top-1px-solid">
         <section>
-            <card>
-                <row>
-                    <box class="-noauth margin-10px" data-href="/messages/">
-                        <row class="align-items-center">
-                            <text class="border-1px-solid border-color-db border-radius-50px line-height-30px text-align-center width-190px">Log In</text>
-                        </row>
+            <card class="padding-10px">
+                <row class="grid-gap-10px" data-columns="2">
+                    <box class="-noauth" data-href="/messages/">
+                        <flex class="align-items-center flex-1">
+                            <text class="border-1px-solid border-color-db border-radius-50px box-sizing-border-box line-height-30px text-align-center width-100pct">Log In</text>
+                        </flex>
                     </box>
-                    <box class="-noauth margin-10px" data-href="/users/:uid/">
-                        <row class="align-items-center">
-                            <text class="border-1px-solid border-color-db border-radius-50px line-height-30px text-align-center width-190px">Sign Up</text>
-                        </row>
+                    <box class="-noauth" data-href="/users/:uid/">
+                        <flex class="align-items-center flex-1">
+                            <text class="border-1px-solid border-color-db border-radius-50px box-sizing-border-box line-height-30px text-align-center width-100pct">Sign Up</text>
+                        </flex>
                     </box>
                 </row>
             </card>

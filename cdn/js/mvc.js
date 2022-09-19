@@ -51,4 +51,13 @@ window.mvc.v ? null : (window.mvc.v = view = function(route) {
 }
 );
 
-window.mvc.c ? null : (window.mvc.c = controller = {});
+window.mvc.c ? null : (window.mvc.c = controller = {
+    menu: {
+        close: () => {
+            byId('main-menu').dataset.transform = "translateX(-100%)";            
+        },
+        open: () => {
+            byId('main-menu').removeAttribute('data-transform');
+        }
+    }
+});
