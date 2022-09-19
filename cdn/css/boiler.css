@@ -111,6 +111,10 @@
         border-color: #eff3f4;
     }
 
+    .border-color-fff {
+        border-color: #fff;
+    }
+
     @media (max-width: 480px) {
         .-mobile-border-color-eff3f4 {
             border-color: #eff3f4;
@@ -220,7 +224,7 @@
         }
     }
 
-    @media (max-width: 480px) {
+    @media (max-width: 640px) {
         .-vga-display-none {
             display: none;
         }
@@ -665,6 +669,22 @@
 
     .width-960px {
         width: 960px;
+    }
+    
+    @media (max-width: 1280px) {
+        .-sxga-width-50px {
+            width: 50px;
+        }
+        
+        .-sxga-width-70px {
+            width: 70px;
+        }
+    }
+
+    @media (max-width: 640px) {
+        .-vga-width-100pct {
+            width: 100%;
+        }
     }
 
     @media (max-width: 480px) {
