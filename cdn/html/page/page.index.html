@@ -27,24 +27,46 @@
             </card>
         </section>
     </header>
-    <block class="-mobile-bottom-0 -mobile-position-fixed -noauth width-100pct background-color-fff border-top-1px-solid">
+    <block>
+        <column>
+            <card class="border-top-1px-solid">
+                <row>
+                    <box class="-mobile-display-flex display-none height-50px width-50px" data-tap="controller.menu.open">
+                        <flex class="align-items-center justify-content-center height-100pct width-100pct">
+                            <picture class="align-center flex justify-center"></picture>
+                            <picture class="background-color-db border-radius-50pct empty-state overflow-hidden position-relative" data-height="50px" data-width="50px">
+                                <img class="bottom-0 height-75pct left-0 invert margin-auto right-0 position-absolute width-75pct" src="cdn/svg/user.svg">
+                            </picture>
+                        </flex>
+                    </box>
+                    <box>
+                        <column>
+                            <text class="line-height-20px"><b>Sam Kohl</b> @iupdate &#8226; 17h</text>
+                            <text>The iPhone 14 Pro Max is TOO BIG.</text>
+                        </column>
+                    </box>
+                </row>
+            </card>
+        </column>
+    </block>
+    <footer class="-mobile-bottom-0 -mobile-position-fixed -noauth width-100pct background-color-fff border-top-1px-solid bottom-0 left-0 position-fixed">
         <section>
             <card class="padding-10px">
-                <row class="grid-gap-10px" data-columns="2">
+                <row class="grid-gap-10px" data-mobile-columns="2">
                     <box class="-noauth" data-href="/messages/">
                         <flex class="align-items-center flex-1">
-                            <text class="border-1px-solid border-color-db border-radius-50px box-sizing-border-box line-height-30px text-align-center width-100pct">Log In</text>
+                            <text class="border-1px-solid border-color-db border-radius-50px box-sizing-border-box line-height-30px padding-x-20px text-align-center width-100pct">Log In</text>
                         </flex>
                     </box>
                     <box class="-noauth" data-href="/users/:uid/">
                         <flex class="align-items-center flex-1">
-                            <text class="border-1px-solid border-color-db border-radius-50px box-sizing-border-box line-height-30px text-align-center width-100pct">Sign Up</text>
+                            <text class="border-1px-solid border-color-db border-radius-50px box-sizing-border-box line-height-30px padding-x-20px text-align-center width-100pct">Sign Up</text>
                         </flex>
                     </box>
                 </row>
             </card>
         </section>
-    </block>
+    </footer>
 </blocks>
 <aside class="-xga-display-none width-360px">
     <column>

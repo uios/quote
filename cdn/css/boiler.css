@@ -181,6 +181,16 @@
     [data-columns="2"] {
         grid-template-columns: auto auto;
     }
+
+    @media (max-width: 480px) {
+        [data-mobile-columns] {
+            display: grid;
+        }
+    
+        [data-mobile-columns="2"] {
+            grid-template-columns: auto auto;
+        }        
+    }
 }
 
 /*DISPLAY*/
@@ -295,7 +305,7 @@
         height: 40px;
     }
 
-    .height-50px {
+    .height-50px, [data-height="50px"] {
         height: 50px;
     }
 
@@ -362,6 +372,10 @@
 
 /*LINE HEIGHT*/
 @media screen {
+    .line-height-20px {
+        line-height: 20px;
+    }
+    
     .line-height-30px {
         line-height: 30px;
     }
@@ -600,6 +614,10 @@
 
     .width-40px, [data-width="40px"] {
         width: 40px;
+    }
+
+    .width-50px, [data-width="50px"] {
+        width: 50px;
     }
 
     .width-50px {
