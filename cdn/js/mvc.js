@@ -27,15 +27,10 @@ window.mvc.v ? null : (window.mvc.v = view = function(route) {
 
             if (root === "explore") {
                 resolve(route);
-            } else if (root === "notifications") {
-                resolve(route);
-            } else if (root === "messages") {
-                resolve(route);
-            } else if (root === "users") {
-                resolve(route);
-            } else if (root === "appearance") {
-                resolve(route);
-            } else if (root === "plugins") {
+            } else if (root === "post") {
+                const vp = dom.body.find('[data-page="/"]');
+                vp.innerHTML === "" && vp.dataset.fetch ? vp.innerHTML = await ajax(vp.dataset.fetch) : null;
+                vp.dataset.active = "true";
                 resolve(route);
             } else {
                 resolve(route);
