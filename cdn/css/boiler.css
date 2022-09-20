@@ -500,6 +500,10 @@
 
 /*MAX WIDTH*/
 @media screen {
+    .max-width-100pct-minus-40px {
+        max-width: calc(100% - 40px);
+    }
+    
     @media (max-width: 1280px) {
         .-sxga-max-width-100pct-minus-90px {
             max-width: calc(100% - 90px);
