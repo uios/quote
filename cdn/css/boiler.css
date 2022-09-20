@@ -214,6 +214,10 @@
         display: -webkit-flex;
     }
 
+    .display-inline-flex {
+        display: inline-flex;
+    }
+
     .display-none {
         display: none;
     }
@@ -325,6 +329,10 @@
 
 /*HEIGHT*/
 @media screen {
+    .height-20px, [data-height="20px"] {
+        height: 20px;
+    }
+    
     .height-30px, [data-height="30px"] {
         height: 30px;
     }
@@ -453,6 +461,10 @@
 
     .margin-right-20px {
         margin-right: 20px;
+    }
+
+    .margin-top-5px {
+        margin-top: 5px;
     }
 
     .margin-x-20px {
