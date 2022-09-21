@@ -781,6 +781,12 @@
         }
     }
 
+    @media (max-width: 640px) {
+        .-vga-position-fixed {
+            position: fixed;
+        }
+    }
+
     @media (max-width: 480px) {
         .-mobile-position-fixed {
             position: fixed;
@@ -800,6 +806,12 @@
     .right-0 {
         right: 0;
     }
+
+    @media (max-width: 640px) {
+        .-vga-right-20px {
+            right: 20px;
+        }
+    }
 }
 
 /*TEXT ALIGN*/
@@ -817,6 +829,12 @@
 
     .top-5pct {
         top: 5%;
+    }
+
+    @media (max-width: 640px) {
+        .-vga-top-7px {
+            top: 7px;
+        }
     }
 }
 
