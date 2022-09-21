@@ -48,7 +48,7 @@
                 <card></card>
             </section>
         </headeer>
-        <nav class="-auth-mobile-display-none -mobile-border-color-eff3f4 -mobile-border-top-1px-solid -mobile-bottom-0 -mobile-height-50px -mobile-position-fixed -mobile-width-100pct -sxga-width-70px width-240px z-index-5">
+        <nav class="-noauth-mobile-display-none -mobile-border-color-eff3f4 -mobile-border-top-1px-solid -mobile-bottom-0 -mobile-height-50px -mobile-position-fixed -mobile-width-100pct -sxga-width-70px width-240px z-index-5">
             <section class="-mobile-flex-direction-row display-flex flex-direction-column margin-x-20px">
                 <card class="-mobile-display-none">
                     <section>
@@ -272,7 +272,7 @@
                                 <text>Display</text>
                             </row>
                         </box>
-                        <box class="border-top-1px-solid">
+                        <box class="border-top-1px-solid" data-tap="auth.account.close()">
                             <row class="margin-x-20px">
                                 <text>Log Out</text>
                             </row>
@@ -281,6 +281,8 @@
                 </card>
             </column>
         </aside>
+        <page class="background-color-rgba-255-255-255-50pct height-100pct overflow-x-hidden position-fixed width-100pct" data-fetch="/cdn/html/page/page.my.html" data-page="/my/"></page>
+        <pages class="background-color-rgba-0-0-0-50pct height-100pct position-fixed width-100pct" data-fetch="/cdn/html/pages/pages.my.account.html" data-pages="/my/account/"></pages>
         <page class="background-color-rgba-0-0-0-50pct height-100pct position-fixed width-100pct" data-fetch="/cdn/html/page/page.post.quote.html" data-page="/post/quote/"></page>
         <main class="-mobile-max-width-100pct -sxga-max-width-100pct-minus-90px">
             <page data-fetch="/cdn/html/page/page.index.html" data-page="/"></page>

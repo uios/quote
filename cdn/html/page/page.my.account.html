@@ -1,0 +1,98 @@
+<blocks class="bg-white-0-5 min-height-100vh noauth" data-backdrop-blur="10px">
+    <block class="height-100pc" data-page="/my/account/">
+        <picture data-backdrop-blur="10px"></picture>
+        <section class="padding-y-50px max-height-100pc--120px">
+            <card>
+                <picture></picture>
+                <form class="border-radius-20px direction-column flex-unset font-size-13px margin-x-auto noauth width-300px" onsubmit="controller.my.setup(event)" id="my-setup">
+                    <box class="width-100pc">
+                        <section class="direction-row flex-wrap-unset">
+                            <span class="bg-white border-radius-5px inline-flex shadow">
+                                <input class="line-height-36px padding-x-10px width-100pc" placeholder="First Name" type="text">
+                            </span>
+                            <span class="bg-white border-radius-5px inline-flex margin-left-10px shadow" data-href="/my/account/">
+                                <input class="line-height-36px padding-x-10px width-100pc" placeholder="Last Name" type="text">
+                            </span>
+                        </section>
+                    </box>
+                    <box class="bg-white border-radius-5px margin-y-10px shadow width-100pc">
+                        <section>
+                            <input class="line-height-36px padding-x-10px width-100pc" placeholder="Username" type="text">
+                        </section>
+                    </box>
+                    <box class="bg-white border-radius-5px margin-bottom-10px shadow width-100pc">
+                        <section>
+                            <input class="line-height-36px padding-x-10px width-100pc" placeholder="Email" type="text">
+                        </section>
+                    </box>
+                    <box class="bg-white border-radius-5px margin-bottom-10px shadow width-100pc">
+                        <section class="direction-row flex">
+                            <input class="flex-1 line-height-36px padding-x-10px" placeholder="Password" type="password">
+                            <input class="height-36px hide invert ui-bg-key width-36px" type="submit">
+                        </section>
+                    </box>
+                    <box class="bg-white border-radius-5px fg-black inline-flex margin-bottom-36px shadow width-100pc" data-submit="my-setup">
+                        <section>
+                            <ico class="absolute height-36px left-0 width-36px" data-height="36px" data-width="36px">
+                                <n class="ui-bg-email"></n>
+                            </ico>
+                            <text class="flex-1 line-height-36px text-align-center">Create Account</text>
+                        </section>
+                    </box>
+                    <box class="bg-white border-radius-5px fg-black inline-flex shadow width-100pc" data-href="/my/">
+                        <section>
+                            <ico class="absolute height-36px left-0 width-36px" data-height="36px" data-width="36px">
+                                <n class="ui-bg-email"></n>
+                            </ico>
+                            <text class="flex-1 line-height-36px text-align-center">Signin with Account</text>
+                        </section>
+                    </box>
+                    <box class="padding-y-10px width-100pc" data-tap="rout.ed.close()">
+                        <section>
+                            <ico class="absolute height-50px invert left-0 width-36px" data-height="50px" data-width="36px">
+                                <n class="ui-bg-incognito"></n>
+                            </ico>
+                            <text class="flex-1 line-height-50px text-align-center">Continue as Guest</text>
+                        </section>
+                    </box>
+                </form>
+            </card>
+        </section>
+    </block>
+    <block class="height-100pc margin-x-auto padding-y-50px width-300px" data-path="/my/account/password/">
+        <section>
+            <card class="margin-x-auto width-240px">
+                <section class="direction-column">
+                    <box class="line-height-50px">
+                        <section>
+                            <ico data-href="/my/" data-width="20px">
+                                <n class="gg-chevron-left"></n>
+                            </ico>
+                            <text class="bolder padding-left-5px" data-href="/my/">Log In</text>
+                        </section>
+                    </box>
+                </section>
+            </card>
+            <card class="margin-x-auto width-240px">
+                <form class="direction-column" id="form-my-forgot" onsubmit="controller.my.forgot(event)">
+                    <box class="margin-bottom-36px">
+                        <section>
+                            <text>Enter your e-mail address and we'll send a link to reset your password.</text>
+                        </section>
+                    </box>
+                    <box>
+                        <section>
+                            <input class="border-radius-5px height-36px line-height-36px padding-x-10px shadow width-100pc" placeholder="Email address" type="email">
+                        </section>
+                    </box>
+                    <box class="margin-top-10px" data-submit="form-my-forgot">
+                        <section>
+                            <text class="bg-black border-radius-5px font-size-14px height-36px line-height-36px padding-x-10px text-align-center shadow width-100pc">Reset Password</text>
+                            <input type="submit">
+                        </section>
+                    </box>
+                </form>
+            </card>
+        </section>
+    </block>
+</blocks>

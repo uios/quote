@@ -3,8 +3,13 @@
         <section>
             <card class="line-height-50px">
                 <row>
-                    <box class="-mobile-display-flex display-none height-50px width-50px" data-tap="controller.menu.open">
-                        <flex class="align-items-center justify-content-center height-100pct width-100pct">
+                    <box class="-mobile-display-flex display-none height-50px width-50px">
+                        <flex class="-noauth align-items-center justify-content-center height-100pct width-100pct">
+                            <ico class="background-color-fff color-000 border-1px-solid border-color-eff3f4 border-radius-15pct box-sizing-border-box" data-height="30px" data-width="30px">
+                                <n class="-ggs-67pct gg-pen"></n>
+                            </ico>
+                        </flex>
+                        <flex class="-isauth align-items-center justify-content-center height-100pct width-100pct" data-tap="controller.menu.open">
                             <picture class="align-center flex justify-center"></picture>
                             <picture class="background-color-db border-radius-50pct empty-state overflow-hidden position-relative" data-height="30px" data-width="30px">
                                 <img class="bottom-0 height-75pct left-0 invert margin-auto right-0 position-absolute width-75pct" src="cdn/svg/user.svg">
@@ -43,7 +48,7 @@
                         <column>
                             <text class="display-flex height-20px line-height-20px width-100pct">
                                 <b class="margin-right-5px">Sam Kohl</b>
-                                <span>@iupdate &#8226; 17h</span>
+                                <span>@iupdate &#8226;17h</span>
                                 <ico class="display-inline-flex margin-left-auto" data-height="20px" data-width="20px">
                                     <n class="gg-more-alt"></n>
                                 </ico>
@@ -80,7 +85,7 @@
             </card>
         </column>
     </block>
-    <footer class="-mobile-bottom-0 -mobile-position-fixed -noauth align-items-center background-color-1d9bf0 bottom-0 color-fff display-flex justify-content-center left-0 padding-y-10px position-fixed width-100pct">
+    <footer class="-mobile-background-color-fff -mobile-bottom-0 -mobile-position-fixed -noauth align-items-center background-color-1d9bf0 bottom-0 color-fff display-flex justify-content-center left-0 padding-y-10px position-fixed width-100pct">
         <flex class="-mobile-display-none -sxga-width-50px height-100pct width-240px"></flex>
         <row class="-xga-width-600px justify-content-space-between width-960px">
             <card class="-vga-display-none padding-10px">
@@ -95,14 +100,14 @@
             </card>
             <card class="-vga-width-100pct font-weight-bolder justify-content-center padding-x-10px">
                 <row class="grid-gap-10px" data-vga-columns="2">
-                    <box class="-noauth" data-href="/messages/">
+                    <box class="-noauth" data-href="/my/">
                         <flex class="align-items-center flex-1">
-                            <text class="border-1px-solid border-color-db border-radius-50px box-sizing-border-box line-height-36px padding-x-20px text-align-center width-100pct">Log In</text>
+                            <text class="-mobile-border-color-ac9b8e -mobile-color-1d9bf0 border-1px-solid border-color-536471 border-radius-50px box-sizing-border-box line-height-36px padding-x-20px text-align-center width-100pct">Log In</text>
                         </flex>
                     </box>
-                    <box class="-noauth" data-href="/users/:uid/">
+                    <box class="-noauth" data-href="/my/account/">
                         <flex class="align-items-center flex-1">
-                            <text class="background-color-fff border-1px-solid border-color-fff border-radius-50px box-sizing-border-box color-000 line-height-36px padding-x-20px text-align-center width-100pct">Sign Up</text>
+                            <text class="-mobile-background-color-1d9bf0 -mobile-border-color-1d9bf0 -mobile-color-fff background-color-fff border-1px-solid border-color-fff border-radius-50px box-sizing-border-box color-000 line-height-36px padding-x-20px text-align-center width-100pct">Sign Up</text>
                         </flex>
                     </box>
                 </row>
