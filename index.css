@@ -269,8 +269,8 @@ boot > div {
 
     ico {
         align-items: center;
-        display: flex;
-        display: webkit-flex;
+        display: inline-flex;
+        display: webkit-inline-flex;
         justify-content: center;
     }
 
@@ -318,9 +318,16 @@ boot > div {
         z-index: 123456789;
     }
 
-    body text {
+    text {
         display: inline-block;
         align-items: center;
+    }
+
+    textarea {
+        border: unset;
+        resize: none;
+        font-family: Arial;
+        -webkit-appearance: none;
     }
 
     [placeholder]:not(input):empty:before {
