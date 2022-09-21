@@ -835,6 +835,10 @@
         .-vga-top-7px {
             top: 7px;
         }
+        
+        .-vga-top-10px {
+            top: 10px;
+        }
     }
 }
 
