@@ -66,5 +66,13 @@ window.mvc.c ? null : (window.mvc.c = controller = {
             }
             );
         }
+    },
+    post: {
+        quote: (event) => {
+            event.preventDefault();
+            const form = event.target;
+            const textarea = form.find('textarea');
+            alert(textarea.value);
+        }
     }
 });

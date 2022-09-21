@@ -242,6 +242,10 @@
         color: #000;
     }
 
+    .color-1d9bf0 {
+        color: 1d9bf0;
+    }
+
     .color-fef200 {
         color: #fef200;
     }
@@ -324,6 +328,10 @@
     }
 
     @media (max-width: 640px) {
+        .-vga-display-inline-flex {
+            display: inline-flex;    
+        }
+        
         .-vga-display-none {
             display: none;
         }
@@ -424,6 +432,10 @@
 
     .height-30px, [data-height="30px"] {
         height: 30px;
+    }
+
+    .height-36px {
+        height: 36px;
     }
 
     .height-40px, [data-height="40px"] {
@@ -711,6 +723,10 @@
 
     .padding-top-10px {
         padding-top: 10px;
+    }
+
+    .padding-top-20px {
+        padding-top: 20px;
     }
 
     .padding-x-10px {

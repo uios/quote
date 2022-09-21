@@ -1,29 +1,30 @@
 <blocks>
     <block class="-vga-border-radius-0 -vga-max-width-100pct -vga-min-height-100pct -vga-width-100pct background-color-fff border-radius-20px margin-auto max-width-100pct-minus-40px width-600px">
-        <column>
+        <form class="-vga-min-height-100pct" id="form-post-quote" onsubmit="controller.post.quote(event)">
             <card>
                 <header>
-                    <box data-href="/">
-                        <section>
-                            <ico>
+                    <box>
+                        <flex class="align-items-center">
+                            <ico data-href="/">
                                 <n class="gg-close"></n>
                             </ico>
-                        </section>
+                            <text class="-vga-display-inline-flex background-color-1d9bf0 border-radius-20px color-fff display-none font-weight-bolder height-36px line-height-36px margin-left-auto margin-right-20px padding-x-20px text-align-center" data-submit="form-post-quote">Write</text>
+                        </flex>
                     </box>
                 </header>
-                <row class="padding-x-20px">
+                <row class="padding-top-20px padding-x-20px">
                     <box class="margin-right-20px" data-href="/">
                         <section>
                             <picture class="align-center flex justify-center"></picture>
-                            <picture class="background-color-db border-radius-50pct empty-state overflow-hidden position-relative" data-height="50px" data-width="50px">
+                            <picture class="background-color-db  border-radius-50pct empty-state overflow-hidden position-relative" data-height="50px" data-width="50px">
                                 <img class="bottom-0 height-75pct left-0 invert margin-auto right-0 position-absolute width-75pct" src="cdn/svg/user.svg">
                             </picture>
                         </section>
                     </box>
                     <box class="flex-1">
                         <header class="margin-bottom-20px">
-                            <text class="border-1px-solid border-radius-20px line-height-20px padding-x-10px text-align-center">
-                                <span>Everyone</span>
+                            <text class="border-1px-solid border-color-d0ccc9 border-radius-20px color-1d9bf0 line-height-20px padding-x-10px text-align-center">
+                                <span class="font-size-14px font-weight-bolder">Everyone</span>
                                 <ico data-height="20px" data-width="20px">
                                     <n class="gg-chevron-down"></n>
                                 </ico>
@@ -31,13 +32,14 @@
                         </header>
                         <column>
                             <textarea class="font-size-18px min-height-96px" placeholder="What's happening?"></textarea>
+                            <input type="submit">
                         </column>
                         <footer class="border-color-d0ccc9 border-top-1px-solid display-flex padding-y-10px width-100pct">
-                            <text class="background-color-1d9bf0 border-radius-20px color-fff font-weight-bolder line-height-36px margin-left-auto padding-x-20px text-align-center">Write</text>
+                            <text class="-vga-display-none background-color-1d9bf0 border-radius-20px color-fff font-weight-bolder height-36px line-height-36px margin-left-auto padding-x-20px text-align-center">Write</text>
                         </footer>
                     </box>
                 </row>
             </card>
-        </column>
+        </form>
     </block>
 </blocks>
