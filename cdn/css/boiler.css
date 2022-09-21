@@ -137,6 +137,10 @@
 
 /*BORDER COLOR*/
 @media screen {
+    .border-color-d0ccc9 {
+        border-color: #d0ccc9;
+    }
+    
     .border-color-eff3f4 {
         border-color: #eff3f4;
     }
@@ -645,6 +649,14 @@
 
 /*MIN HEIGHT*/
 @media screen {
+    .min-height-96px {
+        min-height: 96px;
+    }
+    
+    .min-height-100px {
+        min-height: 100px;
+    }
+    
     .min-height-100vh {
         min-height: 100vh;
     }
@@ -673,6 +685,10 @@
 
     .padding-20px {
         padding: 20px;
+    }
+
+    .padding-top-10px {
+        padding-top: 10px;
     }
 
     .padding-x-10px {

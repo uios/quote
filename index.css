@@ -330,6 +330,10 @@ boot > div {
         -webkit-appearance: none;
     }
 
+    textarea:focus {
+        outline: 0;
+    }
+
     [placeholder]:not(input):empty:before {
         content: attr(placeholder);
     }
