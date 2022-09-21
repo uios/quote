@@ -13,7 +13,7 @@ window.mvc.v ? null : (window.mvc.v = view = function(route) {
     console.log(108, {
         route
     });
-        
+
     return new Promise(async function(resolve, reject) {
         var page = route.page;
         var path = route.path;
@@ -35,11 +35,11 @@ window.mvc.v ? null : (window.mvc.v = view = function(route) {
             } else {
                 resolve(route);
             }
-                
+
         } else {
-                
+
             resolve(route);
-                
+
         }
     }
     );
@@ -48,11 +48,23 @@ window.mvc.v ? null : (window.mvc.v = view = function(route) {
 
 window.mvc.c ? null : (window.mvc.c = controller = {
     menu: {
-        close: () => {
-            byId('main-menu').dataset.transform = "translateX(-100%)";            
-        },
-        open: () => {
+        close: ()=>{
+            byId('main-menu').dataset.transform = "translateX(-100%)";
+        }
+        ,
+        open: ()=>{
             byId('main-menu').removeAttribute('data-transform');
+        }
+    },
+    my: {
+        login: (event,f)=>{
+            event.preventDefault();
+            auth.account.login(event).then(e=>(f ? f : '/').router()).catch(e=>{
+                var code = e.code;
+                var message = e.message;
+                alert(message);
+            }
+            );
         }
     }
 });
