@@ -41,11 +41,13 @@ window.mvc.m ? null : (window.mvc.m = model = {
                                 const id = post.id;
                                 const quote = post.quote;
                                 const uid = post.uid;
+                                const user = post.user;
                                 const username = post.username;
 
                                 var card = html.firstElementChild.cloneNode(true);
                                 card.dataset.id = post.id;
                                 card.dataset.uid = uid;
+                                card.all('box')[0].dataset.href = "/users/"+user+"/";
                                 card.all('box')[1].all('text')[0].find('b').textContent = fullname;
                                 card.all('box')[1].all('text')[0].find('span').textContent = username;
                                 card.all('box')[1].all('text')[1].textContent = quote;
@@ -119,6 +121,11 @@ window.mvc.v ? null : (window.mvc.v = view = function(route) {
                 }
 
                 resolve(route);
+            } 
+            else if(root === "users") {
+                if(get.length > 1) {
+                    resolve(route);                    
+                }
             } else {
                 resolve(route);
             }

@@ -32,7 +32,7 @@ function init() {
     console.log("Initializing...");
 
     window.rout.ing = function(href, GOT, n, m=GOT[n], root=GOT[0]) {
-        return m.includes("#") || (root === 'album' && n === 1);
+        return m.includes("#") || (root === 'users' && n === 1);
     }
 
     touch.events = {
