@@ -16,6 +16,8 @@ window.cdn = {
 };
 
 window.onload = ()=>{
+    api.endpoint = is.local(window.location.href) ? window.location.protocol + "//api.uios.tld" : api.endpoint;
+
     window.dom = {
         body: document.body,
         boot: document.getElementById("boot")
@@ -68,13 +70,6 @@ function init() {
         //console.log(e.type);
     });
 
-    const authChange = function(e) {
-        const load = function(e) {
-            dom.body.dataset.load = "ed";
-        };
-        dom.body.dataset.load = "ed";
-    };
-
     var url = window.location.pathname;
     if (window.globals.domains.subdomain === "uios") {
         var dir = rout.ed.dir(window.location.pathname);
@@ -85,22 +80,44 @@ function init() {
     var uri = ((dom.boot.dataset.path ? dom.boot.dataset.path : url) + (window.location.search + window.location.hash));
 
     var go = false;
+    const authChange = function(e) {
+        const load = function(e) {
+            dom.body.dataset.load = "ed";
+        };
+        dom.body.dataset.load = "ed";
+    };
     if (window.firebase) {
         firebase.initializeApp(auth.config);
-        const onAuthStateChanged = function(user) {
-            auth.change(user).then(authChange);
+        const onAuthStateChanged = async function(user) {
             if (user) {
-                byId("avi").innerHTML = "<img onerror='model.error.image(this)' src='" + (cdn.endpoint + "/" + user.uid + "/avi.jpg") + "'>";
+                const a = function(d) {
+                    const data = JSON.parse(d);
+                    const settings = data.settings;
+                    if (settings) {
+                        const json = settings.json;
+                        const theme = json.theme;
+                        controller.system.theme(theme);
+                    }
+                    auth.change(user).then(authChange);
+                    go ? null : uri.router().then(function() {
+                        go = true;
+                        authChange();
+                    });
+                }
+                const jwt = await auth.getIdToken();
+                var endpoint = is.local(window.location.href) ? window.location.protocol + "//api.uios.tld" : api.endpoint;
+                ajax(endpoint + "/photo/account?jwt=" + jwt).then(a);
             } else {
-                byId("avi").innerHTML = "";
+                go ? null : uri.router().then(function() {
+                    go = true;
+                    authChange();
+                });
             }
         }
         firebase.auth().onAuthStateChanged(onAuthStateChanged);
-        go ? null : uri.router().then(go = true);
     } else {
         uri.router().then(authChange);
     }
-    
+
     console.log("Initialized");
 }
-
