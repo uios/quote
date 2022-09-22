@@ -219,7 +219,7 @@ boot > div {
         overflow: visible;
     }
 
-    block > section, card > section, box > section {
+    block > section, card > section, box > section, box > * {
         width: 100%;
     }
 
@@ -235,7 +235,7 @@ boot > div {
         flex: 1;
     }
 
-    box > section > * {
+    box > * > * {
         display: flex;
         display: -webkit-flex;
         justify-content: center;
