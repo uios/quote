@@ -159,16 +159,20 @@ window.mvc.c ? null : (window.mvc.c = controller = {
             const user = auth.user();
             if (user) {
                 const form = event.target;
+                const submit = form.find('[type="submit"]');
                 const textarea = form.find('textarea');
                 const quote = textarea.value;
+                submit.disabled = true;
                 if (quote.length > 0) {
                     const a = (event)=>{
                         console.log('controller.post.quote data', event);
+                        submit.removeAttribute("disabled");
                         textarea.value = "";
                         "/".router();
                     }
                     const b = (event)=>{
                         console.log('controller.post.quote error', event);
+                        submit.removeAttribute("disabled");
                     }
                     var data = new FormData();
                     const jwt = await auth.getIdToken();
@@ -180,6 +184,7 @@ window.mvc.c ? null : (window.mvc.c = controller = {
                     }).then(a).catch(b);
                 } else {
                     alert("Your post is empty.");
+                    submit.removeAttribute("disabled");
                 }
             }
         }
