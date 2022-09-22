@@ -362,6 +362,10 @@ boot > div {
 
 /*EMPTY*/
 @media screen {
+    .empty:empty, .empty:empty > * {
+        display: none;
+    }
+
     :not(:empty) + .empty-state {
         display: none !important;
     }
