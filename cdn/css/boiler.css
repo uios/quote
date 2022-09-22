@@ -587,6 +587,10 @@
         margin-right: 20px;
     }
 
+    .margin-right-auto {
+        margin-right: auto;
+    }
+
     .margin-top-5px {
         margin-top: 5px;
     }
