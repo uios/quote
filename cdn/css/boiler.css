@@ -724,6 +724,13 @@
     }
 }
 
+/*OPACITY*/
+@media screen {
+    .opacity-50pct {
+        opacity: 50%;
+    }
+}
+
 /*OVERFLOW*/
 @media screen {
     .overflow-hidden {

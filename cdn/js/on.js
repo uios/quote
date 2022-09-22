@@ -4,6 +4,20 @@ window.on.contextmenu = ()=>{}
 ;
 
 window.on.key = {};
+window.on.key.up = {};
+window.on.key.up.quote = event => {
+    const textarea = event.target;
+    const form = textarea.closest('form');
+    const submit = form.find('[type="submit"]');
+    const button = form.find('[data-submit]');
+    if(textarea.value === "") {
+        button.classList.add('opacity-50pct');
+        submit.disabled = true;
+    } else {
+        button.classList.remove('opacity-50pct');
+        submit.removeAttribute('disabled');
+    }
+}
 
 window.onpopstate = (event)=>{
     if (event.state) {
