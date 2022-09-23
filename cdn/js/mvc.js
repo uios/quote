@@ -124,7 +124,20 @@ window.mvc.v ? null : (window.mvc.v = view = function(route) {
             } 
             else if(root === "users") {
                 if(get.length > 1) {
-                    resolve(route);                    
+                    const user = get[1];
+                    const a = async(d) => {
+                        const data = JSON.parse(d);
+                        const user = data.user;
+                        console.log({data});
+                        var vp = dom.body.find('[data-pages="/users/*/"]');
+                        vp.find('[placeholder="Full Name"]').textContent = user.fullname;
+                        vp.find('[placeholder="@username"]').textContent = user.username;
+                    }
+                    const b = (error) => {
+                    }
+                    const endpoint = api.endpoint + "/write/users/" + user + '/';
+                    ajax(endpoint).then(a).catch(b);
+                    resolve(route);
                 }
             } else {
                 resolve(route);
