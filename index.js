@@ -106,7 +106,7 @@ function init() {
                 }
                 const jwt = await auth.getIdToken();
                 var endpoint = is.local(window.location.href) ? window.location.protocol + "//api.uios.tld" : api.endpoint;
-                ajax(endpoint + "/photo/account?jwt=" + jwt).then(a);
+                ajax(endpoint + "/write/account?jwt=" + jwt).then(a);
             } else {
                 go ? null : uri.router().then(function() {
                     go = true;
