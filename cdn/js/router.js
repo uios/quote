@@ -4,9 +4,9 @@ String.prototype.router = async function(params) {
     var url = new URL(uri,location.origin); console.log(url);
     var route = window.route = rout.e(url.hash ? url.hash.split('#')[1] : url.pathname + url.search + url.hash); console.log(route);
 
-    var pages = dom.body.find('pages[data-pages="' + route.root + '"]');
+    var pages = dom.body.find('pages[data-pages="' + getRoot() + '"]');
     var page = dom.body.find('page[data-page="' + route.page + '"]');
-    var vp = page ? page : pages;
+    var vp = page ? page : pages; console.log(page);
 
     if (vp) {
         var goto = window.globals.domains.domain === "github" ? '/'+document.head.querySelector('[name="application-shortname"]').content : '';
@@ -88,7 +88,7 @@ window.rout.e = state=>{
 
 window.rout.ed = {};
 window.rout.ed.bang = async(route)=>{
-    var pages = dom.body.find('pages[data-pages="' + route.root + '"]');
+    var pages = dom.body.find('pages[data-pages="' + getRoot() + '"]');
     var page = dom.body.find('page[data-page="' + route.page + '"]');
     var vp = page ? page : pages;
 

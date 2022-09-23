@@ -9,7 +9,7 @@
         <meta name="application-name" content="Write">
         <meta name="application-shortname" content="write">
         <meta name="msapplication-TileColor" content="#da532c">
-        <meta name='theme-color' content='#021025'>
+        <meta name='theme-color' content='#fef200'>
         <script>
             var domains = window.location.host.split('.');
             window.globals = {
@@ -20,9 +20,10 @@
                 }
             }
             const base = document.createElement("base");
-            base.href = (globals.domains.domain === "github" ? "/write" : "") + "/";
+            base.href = (globals.domains.domain === "github" ? "/" + document.head.querySelector('[name="application-shortname"]').content : "") + "/";
             document.head.appendChild(base);
         </script>
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
         <link href="index.css" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/css.gg/icons/all.css" rel="stylesheet">
         <link href="cdn/css/boiler.css" rel="stylesheet">
@@ -288,8 +289,8 @@
             <page class="max-width-100pct" data-fetch="/cdn/html/page/page.index.html" data-page="/"></page>
             <page data-fetch="/cdn/html/page/page.explore.html" data-page="/explore/"></page>
             <page data-fetch="/cdn/html/page/page.notifications.html" data-page="/notifications/"></page>
-            <page data-fetch="/cdn/html/page/page.messages.html" data-page="/messages/"></page>
-            <page data-fetch="/cdn/html/page/page.users.user.html" data-page="/users/*/"></page>
+            <page data-fetch="/cdn/html/page/p age.messages.html" data-page="/messages/"></page>
+            <pages data-fetch="/cdn/html/page/page.users.user.html" data-pages="/users/*/" data-root="/users/*/"></pages>
         </main>
     </body>
 </html>

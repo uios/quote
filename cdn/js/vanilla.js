@@ -460,8 +460,8 @@ function getRoot(els) {
             arr.push(els[r].dataset.root);
             r++;
         } while (r < els.length);
-        window.paths.arr = arr;
-        root = paths.page.stringExists(arr);
+        window.route.arr = arr;
+        root = window.route.page.stringExists(arr);
     }
     return root;
 }
