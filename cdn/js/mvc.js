@@ -130,7 +130,8 @@ window.mvc.v ? null : (window.mvc.v = view = function(route) {
                         const user = data.user;
                         console.log({data});
                         var vp = dom.body.find('[data-pages="/users/*/"]');
-                        vp.find('[placeholder="Full Name"]').textContent = user.fullname;
+                        vp.all('[placeholder="Full Name"]')[0].textContent = user.fullname;
+                        vp.all('[placeholder="Full Name"]')[1].textContent = user.fullname;
                         vp.find('[placeholder="@username"]').textContent = user.username;
                     }
                     const b = (error) => {
