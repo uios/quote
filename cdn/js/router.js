@@ -2,7 +2,9 @@ String.prototype.router = async function(params) {
     var uri = this.toString();
     
     var url = new URL(uri,location.origin); console.log(url);
-    var route = window.route = rout.e(url.hash ? url.hash.split('#')[1] : url.pathname + url.search + url.hash); console.log(route);
+    var tabs = await rout.ed.vars(rout.ed.dir(url.hash ? url.hash.split('#')[1] : uri));
+    var goto = rout.ed.url(tabs);
+    var route = window.route = rout.e(url.hash ? url.hash.split('#')[1] : goto +  url.search + url.hash); console.log(route);
 
     var pages = dom.body.find('pages[data-pages="' + getRoot() + '"]');
     var page = dom.body.find('page[data-page="' + route.page + '"]');
@@ -140,6 +142,67 @@ window.rout.ed.url = function(dir) {
         href = "/";
     }
     return href;
+}
+window.rout.ed.vars = async function(tabs) {
+    var d = 0
+      , e = 0;
+    do {
+        var dir = tabs[d];
+        if (dir && dir.length > 0) {
+            if (dir.charAt(0) === "*") {
+                dir = GOT[d];
+            }
+            if (dir.charAt(0) === ":") {
+                dir = dir.substring(1);
+                if (!isNaN(dir)) {
+                    var drc = rout.ed.dir(dom.body.dataset.path);
+                    console.log({
+                        dir,
+                        is: d >= parseInt(dir),
+                        drcd: drc[d]
+                    });
+                    if (drc[e - 1] && d >= parseInt(dir)) {
+                        //alert('dir'+dir);
+                        e === 0 && d > 0 ? e = d + 1 : e;
+                        dir = drc[e];
+                        //d = d  1;
+                        e++;
+                    } else {
+                        dir = null;
+                        tabs.splice(d, 1);
+                        d = tabs.length;
+                        //alert(1);
+                    }
+                }
+                if (dir === "get") {
+                    var drc = rout.ed.dir(window.location.pathname);
+                    if (drc[d]) {
+                        dir = drc[d];
+                        //alert(drc[d]);
+                    } else {
+                        dir = null;
+                        tabs.splice(d, 1);
+                        d = tabs.length;
+                        //alert(1);
+                    }
+                }
+                if (dir === "uid") {
+                    dir = auth.user().uid;
+                }
+            }
+            if (dir) {
+                tabs[d] = dir.toString().split(":")[0];
+            } else {
+                tabs[d] = null;
+            }
+        }
+        d++;
+    } while (d < tabs.length);
+    tabs = tabs.filter(function(el) {
+        return el != null;
+    });
+    //console.log({tabs});
+    return tabs;
 }
 
 window.rout.ing = (href,GOT,n)=>{

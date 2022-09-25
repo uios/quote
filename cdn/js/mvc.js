@@ -143,7 +143,7 @@ window.mvc.v ? null : (window.mvc.v = view = function(route) {
                         var html = new DOMParser().parseFromString(template, "text/html").body;
                         const posts = data.posts;
                         if (posts.length > 0) {
-                            const p = 0;
+                            var p = 0;
                             do {
                                 const post = posts[p];
                                 const fullname = post.fullname;
@@ -164,9 +164,8 @@ window.mvc.v ? null : (window.mvc.v = view = function(route) {
                                 feed.insertAdjacentHTML('afterbegin', card.outerHTML);
                                 console.log(p, post, posts);
                                 p++;
-                            } while (p < 10);
+                            } while (p < posts.length);
                         }
-                        console.log();
                     }
                     const b = (error)=>{}
                     const endpoint = api.endpoint + "/write/users/" + user + '/';

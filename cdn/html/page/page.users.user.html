@@ -58,8 +58,14 @@
                     </box>
                     <box class="color-536471 padding-10px">
                         <row>
-                            <text class="margin-right-20px"><span class="font-weight-bolder margin-right-5px" placeholder="0"></span><span>Following</span></text>
-                            <text><span class="font-weight-bolder margin-right-5px" placeholder="0"></span><span>Followers</span></text>
+                            <text class="margin-right-20px">
+                                <span class="font-weight-bolder margin-right-5px" placeholder="0"></span>
+                                <span>Following</span>
+                            </text>
+                            <text>
+                                <span class="font-weight-bolder margin-right-5px" placeholder="0"></span>
+                                <span>Followers</span>
+                            </text>
                         </row>
                     </box>
                 </column>
@@ -68,22 +74,34 @@
                 <row class="justify-content-space-between">
                     <box class="flex-grow-1 padding-x-20px" data-href="/users/:get/">
                         <section class="justify-content-center">
-                            <text>Quotes</text>
+                            <text class="position-relative">
+                                <span>Quotes</span>
+                                <picture class="background-color-1d9bf0 bottom-0 height-2px position-absolute width-100pct" data-page="/users/*/"></picture>
+                            </text>
                         </section>
                     </box>
                     <box class="flex-grow-1 padding-x-20px" data-href="/users/:get/replies/">
                         <section class="justify-content-center">
-                            <text>Quotes & replies</text>
+                            <text class="position-relative">
+                                <span>Quotes & replies</span>
+                                <picture class="background-color-1d9bf0 bottom-0 height-2px position-absolute width-100pct" data-page="/users/*/replies/"></picture>
+                            </text>
                         </section>
                     </box>
                     <box class="flex-grow-1 padding-x-20px" data-href="/users/:get/media/">
                         <section class="justify-content-center">
-                            <text>Media</text>
+                            <text class="position-relative">
+                                <span>Media</span>
+                                <picture class="background-color-1d9bf0 bottom-0 height-2px position-absolute width-100pct" data-page="/users/*/media/"></picture>
+                            </text>
                         </section>
                     </box>
                     <box class="flex-grow-1 padding-x-20px" data-href="/users/:get/likes/">
                         <section class="justify-content-center">
-                            <text>Likes</text>
+                            <text class="position-relative">
+                                <span>Likes</span>
+                                <picture class="background-color-1d9bf0 bottom-0 height-2px position-absolute width-100pct" data-page="/users/*/likes/"></picture>
+                            </text>
                         </section>
                     </box>
                 </row>
