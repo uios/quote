@@ -47,15 +47,15 @@ window.mvc.m ? null : (window.mvc.m = model = {
                                 var card = html.firstElementChild.cloneNode(true);
                                 card.dataset.id = post.id;
                                 card.dataset.uid = uid;
-                                card.all('box')[0].dataset.href = "/users/"+user+"/";
+                                card.all('box')[0].dataset.href = "/users/" + user + "/";
                                 card.all('box')[1].all('text')[0].find('b').textContent = fullname;
                                 card.all('box')[1].all('text')[0].find('span').textContent = username;
                                 card.all('box')[1].all('text')[1].textContent = quote;
-                                
+
                                 feed.insertAdjacentHTML('afterbegin', card.outerHTML);
                                 pp++;
                             } while (pp < posts.length);
-                            
+
                             lazyLoad(feed.all('[data-src]'))
                         }
                     }
@@ -115,30 +115,65 @@ window.mvc.v ? null : (window.mvc.v = view = function(route) {
                     var img = document.createElement('img');
                     img.src = cdn.endpoint + '/' + uid + '/avi.jpg';
                     img.setAttribute("onerror", 'this.remove()');
-                    const avi = vp.find('picture'); console.log({avi});
+                    const avi = vp.find('picture');
+                    console.log({
+                        avi
+                    });
                     avi.innerHTML = img.outerHTML;
                     avi.dataset.href = avi.nextElementSibling.dataset.href = "/users/" + uid + "/";
                 }
 
                 resolve(route);
-            } 
-            else if(root === "users") {
-                if(get.length > 1) {
+            } else if (root === "users") {
+                if (get.length > 1) {
                     const user = get[1];
-                    const a = async(d) => {
+                    const a = async(d)=>{
                         const data = JSON.parse(d);
                         const user = data.user;
-                        console.log({data});
+                        console.log({
+                            data
+                        });
                         var vp = dom.body.find('[data-pages="/users/*/"]');
                         vp.all('[placeholder="Full Name"]')[0].textContent = user.fullname;
                         vp.all('[placeholder="Full Name"]')[1].textContent = user.fullname;
                         vp.find('[placeholder="@username"]').textContent = user.username;
+
+                        const feed = byId('feed-users-user-quotes');
+                        var template = await ajax('/cdn/html/template/template.feed.quotes.html');
+                        var html = new DOMParser().parseFromString(template, "text/html").body;
+                        const posts = data.posts;
+                        if (posts.length > 0) {
+                            const p = 0;
+                            do {
+                                const post = posts[p];
+                                const fullname = post.fullname;
+                                const id = post.id;
+                                const quote = post.quote;
+                                const uid = post.uid;
+                                const user = post.user;
+                                const username = post.username;
+
+                                var card = html.firstElementChild.cloneNode(true);
+                                card.dataset.id = post.id;
+                                card.dataset.uid = uid;
+                                card.all('box')[0].dataset.href = "/users/" + user + "/";
+                                card.all('box')[1].all('text')[0].find('b').textContent = fullname;
+                                card.all('box')[1].all('text')[0].find('span').textContent = username;
+                                card.all('box')[1].all('text')[1].textContent = quote;
+
+                                feed.insertAdjacentHTML('afterbegin', card.outerHTML);
+                                console.log(p, post, posts);
+                                p++;
+                            } while (p < 10);
+                        }
+                        console.log();
                     }
-                    const b = (error) => {
-                    }
+                    const b = (error)=>{}
                     const endpoint = api.endpoint + "/write/users/" + user + '/';
                     ajax(endpoint).then(a).catch(b);
                     resolve(route);
+
+                    if (get.length > 2) {} else {}
                 }
             } else {
                 resolve(route);
