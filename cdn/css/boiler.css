@@ -849,6 +849,11 @@
         padding-top: 10px;
     }
 
+    .padding-y-20px {
+        padding-bottom: 20px;
+        padding-top: 20px;
+    }
+
     @media (max-width: 768px) {
         .-tablet-padding-0 {
             padding: 0;

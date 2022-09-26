@@ -35,6 +35,7 @@ String.prototype.router = async function(params) {
                     const goin = (window.globals.domains.domain === "github" ? '/#' : '')+rout.ed.url(bash);
                     window.parent.history.pushState(goin, '', goin);
                 }
+                dom.body.dataset.path = route.path;
                 console.log({
                     hash,
                     route,
@@ -174,11 +175,10 @@ window.rout.ed.vars = async function(tabs) {
                         //alert(1);
                     }
                 }
-                if (dir === "get") {
-                    var drc = rout.ed.dir(window.location.pathname);
+                if (dir === "get") {                    
+                    var drc = rout.ed.dir(dom.body.dataset.path);
                     if (drc[d]) {
                         dir = drc[d];
-                        //alert(drc[d]);
                     } else {
                         dir = null;
                         tabs.splice(d, 1);

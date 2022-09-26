@@ -139,6 +139,7 @@ window.mvc.v ? null : (window.mvc.v = view = function(route) {
                         vp.find('[placeholder="@username"]').textContent = user.username;
 
                         const feed = byId('feed-users-user-quotes');
+                        feed.innerHTML = "";
                         var template = await ajax('/cdn/html/template/template.feed.quotes.html');
                         var html = new DOMParser().parseFromString(template, "text/html").body;
                         const posts = data.posts;
