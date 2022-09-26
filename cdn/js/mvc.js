@@ -147,7 +147,7 @@ window.mvc.v ? null : (window.mvc.v = view = function(route) {
 
                         vp.all('[placeholder="Full Name"]')[0].textContent = user.fullname;
                         vp.all('[placeholder="Full Name"]')[1].textContent = user.fullname;
-                        vp.find('[placeholder="@username"]').textContent = user.username;
+                        vp.find('[placeholder="@username"]').textContent = '@'+user.username;
 
                         const feed = byId('feed-users-user-quotes');
                         feed.innerHTML = "";
