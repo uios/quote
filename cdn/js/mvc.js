@@ -134,6 +134,17 @@ window.mvc.v ? null : (window.mvc.v = view = function(route) {
                             data
                         });
                         var vp = dom.body.find('[data-pages="/users/*/"]');
+
+                        if(data.user.uid === auth.user().uid) {
+                            byId('edit-profile').classList.remove('display-none');
+                            byId('follow-user').classList.add('display-none');
+                            byId('user-options').classList.add('display-none');
+                        } else {
+                            byId('edit-profile').classList.add('display-none');
+                            byId('follow-user').classList.remove('display-none');
+                            byId('user-options').classList.remove('display-none');                            
+                        }
+                        
                         vp.all('[placeholder="Full Name"]')[0].textContent = user.fullname;
                         vp.all('[placeholder="Full Name"]')[1].textContent = user.fullname;
                         vp.find('[placeholder="@username"]').textContent = user.username;
