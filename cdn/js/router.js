@@ -19,10 +19,11 @@ String.prototype.router = async function(params) {
         //console.log('String.prototype.router', route);
         if (route) {
             var pop = params ? params.pop : null;
-            var path = route.path;
-            window.GET = rout.ed.dir(path);
 
             route = window.view ? await view(route).then(rout.ed.bang(route)) : await rout.ed.bang(route);
+            
+            var path = route.path;
+            window.GET = rout.ed.dir(path);
 
             if (!pop && !["blob:"].includes(window.location.protocol)) {
                 const hash = globals.domains.domain === "github" ? "/#" : "";
