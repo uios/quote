@@ -614,6 +614,10 @@
         margin-bottom: 20px;
     }
 
+    .margin-bottom-auto {
+        margin-bottom: auto;
+    }
+
     .margin-left-10px {
         margin-left: 10px;
     }
@@ -766,6 +770,10 @@
 
 /*MIN HEIGHT*/
 @media screen {    
+    .min-height-100pct {
+        min-height: 100%;
+    }
+    
     .min-height-96px {
         min-height: 96px;
     }

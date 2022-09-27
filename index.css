@@ -213,7 +213,7 @@ boot > div {
         display: -webkit-inline-flex;
         display: -moz-flex;
         width: 100%;
-        justify-content: center;
+        /* justify-content: center; */
         flex-direction: column;
         position: relative;
         overflow: visible;
