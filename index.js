@@ -23,6 +23,8 @@ window.onload = ()=>{
         boot: document.getElementById("boot")
     };
 
+    window.global = window.globals;
+
     dom.body.dataset.load = "ing";
 
     init();
